@@ -1,0 +1,46 @@
+{{#each classes as |class|}}
+<a href="/class?uuid={{class.id}}">
+  <div class="classifier-class">
+    <h2> {{class.title}} </h2>
+  </div>
+</a>
+{{/each}}
+
+<div class="classifier-class-plus" {{action "plusClicked"}}>
+<h1>+</h1>
+</div>
+
+<div class="classifier-class-train">
+<h1>TRAIN</h1>
+</div>
+
+
+{{#if showDialog}}
+  {{#paper-dialog class="flex-77" onClose=(action "closeDialog" "cancel") origin=dialogOrigin clickOutsideToClose=true}}
+    {{#paper-toolbar}}
+      {{#paper-toolbar-tools}}
+        <h2>Create a new <b>CLASS</b> to train on.</h2>
+        <span class="flex"></span>
+        {{#paper-button iconButton=true onClick=(action "closeDialog" "cancel")}}{{paper-icon icon="close"}}{{/paper-button}}
+      {{/paper-toolbar-tools}}
+    {{/paper-toolbar}}
+
+    {{#paper-dialog-content}}
+    {{#paper-form onSubmit=(action "submitNewClass") as |form|}}
+      <div class="layout-row">
+        <div class="layout-column flex-50">
+          {{form.input label="Label" value=label onChange=(action (mut label)) required=true}}
+        </div>
+        <div class="layout-column flex-50">
+	{{paper-input textarea=true block=true label="Description" maxlength=150 passThru=(hash rows=5 maxRows=5) value=description onChange=(action (mut description))}}
+       </div>
+      </div>
+      <div class="layout-row">
+        {{#form.submit-button}}CREATE{{/form.submit-button}}
+      </div>
+    {{/paper-form}}
+
+    {{/paper-dialog-content}}
+
+  {{/paper-dialog}}
+{{/if}}

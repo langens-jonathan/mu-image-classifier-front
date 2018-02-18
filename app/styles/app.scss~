@@ -1,0 +1,130 @@
+@import 'ember-paper';
+
+$primary: 'deep-orange';
+
+body {
+  background-color: #FAEBBD;
+  color: #22223B;
+}
+
+.class-definition {
+  color: #F7F7F2;
+  background-color: #F3C98B;
+  margin-top: 15px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-bottom: 10px;
+  padding: 5px;
+  padding-left: 20px;
+  padding-right: 2opx;
+  text-indent: 15px;
+}
+
+.add-image-block {
+  color: #F7F7F2;
+  background-color: #A88FAC;
+  margin: 15px;;
+  margin-top: 15px;
+  margin-left: 0px;
+  margin-right: 0px;
+  padding: 5px;
+  padding-left: 20px;
+  padding-right: 2opx;
+  text-indent: 15px;
+}
+
+.add-image-button {
+  width: 225px;
+  background-color: #D4B2D8;
+  display: inline-block;
+}
+
+.warning {
+  background-color: #CC444B;
+  color: #ffffff;
+}
+
+.classifier-class {
+  background-color: #00A7E1;
+  display: inline-block;
+  width: 175px;
+  height: 175px;
+  margin: 30px;
+  border-radius:25px;
+  color: #EEC;
+}
+
+.classifier-class h2 {
+  margin:auto;
+  margin-top: 75px;
+  display:block;
+  text-indent:12px;
+}
+
+.classifier-class:hover {
+  box-shadow: 12px 0 15px -4px rgba(73, 73, 73, 0.8), -12px 0 8px -4px rgba(73, 73, 73, 0.8);
+	-moz-box-shadow: 12px 0 15px -4px rgba(73, 73, 73, 0.8), -12px 0 8px -4px rgba(73, 73, 73, 0.8);
+	-webkit-box-shadow: 12px 0 15px -4px rgba(73, 73, 73, 0.8), -12px 0 8px -4px rgba(73, 73, 73, 0.8);
+	-o-box-shadow: 12px 0 15px -4px rgba(73, 73, 73, 0.8), -12px 0 8px -4px rgba(73, 73, 73, 0.8);
+  color: #FFF;
+}
+
+.classifier-class-plus {
+  background-color: #B7999C;
+  display: inline-block;
+  width: 175px;
+  height: 175px;
+  margin: 30px;
+  margin-top: 40px;
+  border-radius:25px;
+  color: #071013;
+}
+
+.classifier-class-plus h1 {
+  margin:auto;
+  margin-top: 75px;
+  display:block;
+  text-indent:75px;
+}
+
+.classifier-class-plus:hover {
+  box-shadow: 12px 0 15px -4px rgba(73, 73, 73, 0.8), -12px 0 8px -4px rgba(73, 73, 73, 0.8);
+	-moz-box-shadow: 12px 0 15px -4px rgba(73, 73, 73, 0.8), -12px 0 8px -4px rgba(73, 73, 73, 0.8);
+	-webkit-box-shadow: 12px 0 15px -4px rgba(73, 73, 73, 0.8), -12px 0 8px -4px rgba(73, 73, 73, 0.8);
+	-o-box-shadow: 12px 0 15px -4px rgba(73, 73, 73, 0.8), -12px 0 8px -4px rgba(73, 73, 73, 0.8);
+  color: #3A4347;
+}
+
+
+
+.classifier-class-train {
+  background-color: #EB5160;
+  display: inline-block;
+  width: 175px;
+  height: 175px;
+  margin: 30px;
+  margin-top: 40px;
+  border-radius:25px;
+  color: #071013;
+  background-image: url(/assets/images/train.png);
+}
+
+.classifier-class-train h1 {
+  margin:auto;
+  margin-top: 75px;
+  display:block;
+  text-indent:35px;
+}
+
+.classifier-class-train:hover {
+  box-shadow: 12px 0 15px -4px rgba(73, 73, 73, 0.8), -12px 0 8px -4px rgba(73, 73, 73, 0.8);
+	-moz-box-shadow: 12px 0 15px -4px rgba(73, 73, 73, 0.8), -12px 0 8px -4px rgba(73, 73, 73, 0.8);
+	-webkit-box-shadow: 12px 0 15px -4px rgba(73, 73, 73, 0.8), -12px 0 8px -4px rgba(73, 73, 73, 0.8);
+	-o-box-shadow: 12px 0 15px -4px rgba(73, 73, 73, 0.8), -12px 0 8px -4px rgba(73, 73, 73, 0.8);
+  color: #3A4347;
+}
+
+
+.md-toolbar-tools {
+  background-color: #7D8491;
+}

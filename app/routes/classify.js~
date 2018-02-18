@@ -1,0 +1,42 @@
+import Ember from 'ember';
+
+export default Ember.Route.extend({
+    ajax: Ember.inject.service(),
+
+    routeController: null,
+
+    setupController: function(controller, model) {
+	this._super(controller, model);
+	
+	Ember.set(this, "routeController", controller);
+    },
+    
+    uploadPhoto: function(file, _this) {
+	file.readAsDataURL().then(function (url) {
+	    Ember.set(_this, "routeController.uploadedImage", url);
+	});
+
+	Ember.set(_this, "routeController.type", "...calculating...");
+	
+	let response = file.upload('/upload/');
+	response.then(function(r) {
+	    var uuid = JSON.parse(r.body[0].data)['data']['id'];
+	    
+	    Ember.Logger.log(uuid);
+	    
+	    var theUrl = '/classify/' + uuid;
+	    
+	    var xmlHttp = new XMLHttpRequest();
+	    xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
+	    xmlHttp.send( null );
+	    Ember.set(_this, "routeController.type", xmlHttp.responseText);
+	});
+    },
+
+  actions: {
+      uploadImage(file) {
+	  Ember.get(this, 'uploadPhoto')(file, this);
+    }
+  }
+
+});

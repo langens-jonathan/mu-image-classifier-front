@@ -1,0 +1,31 @@
+<div class="class-definition">
+<h2>Class:{{model.title}}</h2>
+
+    {{#paper-form onSubmit=(action "updateClass") as |form|}}
+      <div class="layout-row">
+        <div class="layout-column flex-50">
+          {{form.input label="Label" value=model.title onChange=(action (mut model.title)) required=true}}
+        </div>
+        <div class="layout-column flex-50">
+	{{paper-input textarea=true block=true label="Description" maxlength=150 passThru=(hash rows=5 maxRows=5) value=model.description onChange=(action (mut model.description))}}
+       </div>
+      </div>
+      <div class="layout-row">
+        {{#form.submit-button}}update{{/form.submit-button}}
+      </div>
+    {{/paper-form}}
+</div>
+
+<div class="add-image-block">
+{{#paper-button background=true}}
+      {{#file-upload name="photos"
+                     accept="image/*"
+                     multiple=true
+                     onfileadd=(route-action "uploadImage")}}
+        <a id="upload-image" tabindex=0 class="add-image-button">Add an Image.</a>
+      {{/file-upload}}
+{{/paper-button}}
+</div>
+{{#each model.trainingExamples as |example|}}
+EXAMPLE FILE: {{example.file}}
+{{/each}}

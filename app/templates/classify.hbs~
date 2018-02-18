@@ -1,0 +1,20 @@
+<h1>Classify</h1>
+
+<table>
+<tr><td><img src={{uploadedImage}} width="500" height="500"/></td></tr>
+
+
+<tr><td><h1>{{type}}</h1></td></tr>
+
+
+<tr><td>{{#paper-button background=true}}
+      {{#file-upload name="photos"
+                     accept="image/*"
+                     multiple=true
+                     onfileadd=(route-action "uploadImage")}}
+        <a id="upload-image" tabindex=0>Add an Image.</a>
+      {{/file-upload}}
+{{/paper-button}}</td></tr>
+</table>
+
+

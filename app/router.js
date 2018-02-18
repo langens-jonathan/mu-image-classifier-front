@@ -7,6 +7,9 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.route('train');
+  this.route('classify');
+  this.route('class');
 });
 
 export default Router;

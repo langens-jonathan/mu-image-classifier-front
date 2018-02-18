@@ -1,5 +1,12 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-{{welcome-page}}
-{{!-- Feel free to remove this! --}}
+{{#paper-toolbar}}
+  <div class="md-toolbar-tools">
+    {{#link-to 'index'}}{{#paper-button}}Home{{/paper-button}}{{/link-to}}
+    {{#link-to 'train'}}{{#paper-button}}Train{{/paper-button}}{{/link-to}}
+    {{#link-to 'classify'}}{{#paper-button}}Classify{{/paper-button}}{{/link-to}}
+  </div>
+{{/paper-toolbar}}
 
+{{#paper-content class="md-padding"}}
 {{outlet}}
+{{/paper-content}}
+
